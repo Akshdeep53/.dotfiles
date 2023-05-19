@@ -1,3 +1,6 @@
 #open screen snip tool
-alt + {q,f,j}
-  {st -e flameshot gui,firefox,Joplin}
+alt + {q,f}
+  {st -e flameshot gui,firefox}
+
+alt + shift + j
+  Joplin
