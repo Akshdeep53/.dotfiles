@@ -4,3 +4,13 @@ alt + {q,f}
 
 alt + shift + j
   Joplin
+
+XF86AudioRaiseVolume
+ sh -c "amixer -c 1 sset Master 3%+"
+
+XF86AudioLowerVolume
+ sh -c "amixer -c 1 sset Master 3%-"
+
+XF86AudioMute
+ sh -c "amixer -c 1 sset Master 0%"
+

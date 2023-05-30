@@ -1,4 +1,31 @@
 set previewer lf-ueberzug-previewer
 set cleaner lf-ueberzug-cleaner
-
 set hidden
+set info size
+set reverse!
+set icons true
+set drawbox true
+set ignorecase true
+
+cmd mkdir ${{
+ printf "Director Name: "
+ read ans
+ mkdir $ans
+}}
+
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd trash %set -f; mv $fx ~/.trash
+
+map e $$EDITOR "$f"
+map gd cd ~/Downloads
+map gf cd ~/.dotfiles
+map <enter> open
+map gm mkdir
+map <delete> trash
+

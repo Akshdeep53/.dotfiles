@@ -59,7 +59,7 @@ fi
 /use/bin/pipewire-media-session &
 
 sxhkd &
-dwmblocks &
 udiskie &
+slstatus &
 nitrogen --restore &
 exec dwm
