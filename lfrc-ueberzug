@@ -13,19 +13,27 @@ cmd mkdir ${{
  mkdir $ans
 }}
 
-cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
+cmd rmspace ${{
+ rename -a ' ' '_' *
 }}
+
+cmd open &{{
+ case $(file --mime-type -Lb $f) in
+  text/*)lf -remote "send $id \$vim \$fx";;
+  */pdf) mupdf $f;;
+  */zip) unzip $f;;
+  */mp4) mpv $f;;
+  *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+ esac
+}} 
 
 cmd trash %set -f; mv $fx ~/.trash
 
-map e $$EDITOR "$f"
 map gd cd ~/Downloads
 map gf cd ~/.dotfiles
-map <enter> open
+map gg cd ~/Documents
+map gb cd ~/Books
 map gm mkdir
 map <delete> trash
-
+map <enter> open
+map ss rmspace

@@ -53,13 +53,20 @@ fi
 #xterm -geometry 80x50+494+51 &
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 81x66+0+0 -name login
+#xrander --setprovideroutputsource modesetting NVIDIA-0
+#xrander --auto
+#xrander --output HDMI-0 --mode 1920x1080
 
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
 /use/bin/pipewire-media-session &
 
-sxhkd &
-udiskie &
-slstatus &
-nitrogen --restore &
+
+#sxhkd &
+#udiskie &
+#slstatus &
+#dwmblocks &
+#nitrogen --restore &
+#xmonad &
 exec dwm
+
