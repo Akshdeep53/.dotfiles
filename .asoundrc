@@ -1,0 +1,33 @@
+#defaults.pcm.card 2
+#defaults.ctl.card 2
+pcm.!default { type hw card Generic_1 }
+ctl.!default { type hw card Generic_1 }
+#ALSA_CARD=Generic_1
+#ALSA_CARD=ALC897
+
+#pcm.!default {
+#   type plug
+#   slave.pcm {
+#       @func getenv
+#       vars [ ALSAPCM ]
+#       default "hw:Generic_1"
+#    }
+#}
+ 
+#pcm.upmix71 {
+#   type upmix
+#   slave.pcm "hw:2,0"
+#   delay 15
+#   channels 8
+#}
+#
+#pcm.softvol {
+#    type softvol
+#    slave.pcm "upmix71"
+#    control {
+#        name "Master"
+#        card 2
+#    }
+#}
+#
+#pcm.!default "plug:softvol"
