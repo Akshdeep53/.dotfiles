@@ -20,10 +20,10 @@ let mapleader = ","
 colorscheme elflord "setting colorscheme
 
 ""----------------------------------- NERDTree settings -----------------------------------------
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
 ""----------------------------------- status bar settings ------------------------------------
 let g:currentmode={
