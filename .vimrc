@@ -147,6 +147,11 @@ augroup filetype_html
 	autocmd BufNewfile, BufRead *.html setlocal nowrap
 augroup END
 
+augroup filetype_tex
+	autocmd!
+	autocmd FileType tex nnoremap <F4> :w <CR>:!pdflatex % && !mupdf %:r.pdf &<CR>
+augroup END
+
 
 
 
